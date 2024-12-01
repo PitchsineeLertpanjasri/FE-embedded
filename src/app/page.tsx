@@ -92,9 +92,15 @@ const App: React.FC = () => {
       }
     });
 
+     // Start the auto-feeding mechanism
+     const autoFeedingInterval = setInterval(() => {
+      checkAutoFeeding();
+    }, 60 * 1000); // Check every minute
+
     return () => {
       unsubscribe();
       unsubscribe2();
+      clearInterval(autoFeedingInterval); // Cleanup interval on unmount
     };
 
   }, []);
@@ -129,6 +135,21 @@ const App: React.FC = () => {
       })
       .catch((error) => console.error("Error updating servoStatus:", error));
   };
+
+  const checkAutoFeeding = () => {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+
+    // Check for 8:00 AM or 6:00 PM
+    if (
+      (currentHour === 8 && currentMinute === 0) ||
+      (currentHour === 18 && currentMinute === 0)
+    ) {
+      handleClick(); // Trigger feeding
+    }
+  };
+
 
 
   const handleMouseEnter = () => setIsHovered(true); // Set hover state
