@@ -203,7 +203,7 @@ const App: React.FC = () => {
 
             {/* Second row for Value 4 and the Toggle Button */}
             <div className="value-row">
-              <div className={data.weightData < 100 ? "valueNotify" : "value"}>
+              <div className={data.weightData < 60 ? "valueNotify" : "value"}>
                   Food left: {data.weightData} gram
               </div>
             <button
