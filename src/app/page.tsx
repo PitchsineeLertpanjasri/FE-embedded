@@ -196,8 +196,8 @@ const App: React.FC = () => {
               <div className={data.tempData < 18 || data.tempData > 30 ? "valueNotify" : "value"}>
                 Temp : {data.tempData}
               </div>
-              <div className={data.waterLevelData ? "valueNotify" : "value"}>
-                Water level : {data.waterLevelData ? 'true' : 'false'}
+              <div className={data.waterLevelData ? "value" : "valueNotify"}>
+                Properly water level  : {data.waterLevelData ? 'true' : 'false'}
               </div>
             </div>
 
