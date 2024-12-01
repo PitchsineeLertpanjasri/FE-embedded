@@ -69,6 +69,18 @@
     border: 2px solid #015cbd; /* Add border color */
   }
   
+  .valueNotify {
+    color: white;
+    flex: 1;
+    background-color: #e90000;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.2rem; /* Scalable font */
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #fbbdbd; /* Add border color */
+  }
+  
   /* Toggle button */
   .toggle-button {
     flex: 1;
@@ -134,6 +146,7 @@
     }
   
     .value,
+    .valueNotify,
     .toggle-button {
       flex: none; /* Remove flex behavior */
       width: 90%; /* Consistent size across all devices */

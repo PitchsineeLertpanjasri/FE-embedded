@@ -168,26 +168,23 @@ const App: React.FC = () => {
           </div>
           <div className="values-container">
             {/* First row of values */}
-            <div className="value-row">
-              <div className="value">pH : {data.phData}</div>
-              <div className="value">Temp : {data.tempData} deg C</div>
-              <div className={`value ${data.waterLevelData ? 'value-true' : 'value-false'}`}>
+              <div className="value-row">
+              <div className={data.phData < 6.5 || data.phData > 8.5 ? "valueNotify" : "value"}>
+                pH : {data.phData}
+              </div>
+              <div className={data.tempData < 18 || data.tempData > 30 ? "valueNotify" : "value"}>
+                Temp : {data.tempData}
+              </div>
+              <div className={data.waterLevelData ? "valueNotify" : "value"}>
                 Water level : {data.waterLevelData ? 'true' : 'false'}
               </div>
             </div>
 
             {/* Second row for Value 4 and the Toggle Button */}
             <div className="value-row">
-              <div className="value">Food left: {data.weightData} gram</div>
-              {/* <button
-              className={`toggle-button ${isOpen ? 'open' : ''} ${isHovered && !isOpen ? 'hover' : ''}`}
-              onClick={handleClick}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              disabled={isDisabled} // Disable button based on state
-            >
-              {isOpen ? 'Open' : isHovered ? 'Click to Open' : 'Close'}
-            </button> */}
+              <div className={data.weightData < 100 ? "valueNotify" : "value"}>
+                  Food left: {data.weightData} gram
+              </div>
             <button
                 className={`toggle-button ${
                   data.servoStatus ? "open" : ""
