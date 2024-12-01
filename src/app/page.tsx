@@ -131,7 +131,7 @@ const App: React.FC = () => {
           update(dbRef, { servoStatus: false })
             .catch((error) => console.error("Error reverting servoStatus:", error));
           setIsDisabled(false);
-        }, 5000);
+        }, 7000);
       })
       .catch((error) => console.error("Error updating servoStatus:", error));
   };
@@ -215,7 +215,7 @@ const App: React.FC = () => {
                 onMouseLeave={handleMouseLeave}
                 disabled={isDisabled} // Disable button while processing
               >
-                {data.servoStatus ? "Open" : isHovered ? "Click to Open" : "Close"}
+                {data.servoStatus ? "Open" : isHovered ? "Click to Open" : "Open"}
               </button>
             </div>
           </div>
