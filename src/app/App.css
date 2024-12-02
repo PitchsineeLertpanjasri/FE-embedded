@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #f8f9fa;
+    background-color: #acdae9; /* Aquarium-themed blue background */;
   }
   
   /* Video container */
@@ -21,7 +21,7 @@
     display: flex; /* Enable Flexbox */
     align-items: center; /* Vertically center */
     justify-content: center; /* Horizontally center */
-    background-color: #e0e0e0; /* Background for visibility */
+    background-color: #d6eaff; /* Light blue for video container */
     border-radius: 8px;
     box-sizing: border-box;
   }
@@ -59,8 +59,9 @@
   
   /* Individual value box */
   .value {
+    color: black;
     flex: 1;
-    background-color: #f3f3f3;
+    background-color: #c8fbff;
     padding: 15px;
     border-radius: 8px;
     font-size: 1.2rem; /* Scalable font */
@@ -87,7 +88,7 @@
     padding: 15px;
     border: none;
     border-radius: 18px;
-    background-color: #007bff;
+    background-color: #006aff;
     color: white;
     font-size: 1.2rem;
     cursor: pointer;
